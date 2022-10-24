@@ -1,0 +1,20 @@
+# docs: https://phpstan.org/config-reference
+includes:
+    - phar://phpstan.phar/conf/bleedingEdge.neon
+
+parameters:
+#    phpVersion: 70400
+    level: max
+    bootstrapFiles:
+        - vendor/autoload.php
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - tests/*/stubs/*
+    inferPrivatePropertyTypeFromConstructor: true
+    checkMissingIterableValueType: true
+    treatPhpDocTypesAsCertain: true
+#    checkUnionTypes: false # Method Foo::bar() should return int|string but returns bool|int
+#    checkTooWideReturnTypesInProtectedAndPublicMethods: true
+#    ignoreErrors:

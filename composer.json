@@ -1,0 +1,40 @@
+{
+    "name": "pifeifei/pdf2image",
+    "require": {
+        "php": "^7.2|^8.0",
+        "ext-imagick": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.19|^3.9",
+        "phpstan/phpstan": "^1.8",
+        "phpstan/phpstan-phpunit": "^1.1",
+        "phpunit/phpunit": "^8.5|^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pff\\Pdf2Image\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pff\\Pdf2ImageTest\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pifeifei",
+            "email": "pifeifei1989@qq.com"
+        }
+    ],
+    "scripts": {
+        "phpstan": "phpstan analyse --memory-limit=-1",
+        "check-style": "php-cs-fixer fix --using-cache=no --diff --dry-run --ansi",
+        "fix-style": "php-cs-fixer fix --using-cache=no --ansi",
+        "test": "vendor/bin/phpunit --colors=always --testdox"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
